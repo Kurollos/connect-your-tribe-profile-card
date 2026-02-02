@@ -1,0 +1,103 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #1b077e, #043376);
+  margin: 0;
+}
+
+/* Extra grote, liggende kaart */
+.rect-card {
+  width: 850px;    /* Groter */
+  height: 580px;   /* Groter */
+  perspective: 1000px;
+  position: relative;
+}
+
+/* Voorkant en achterkant */
+.rect-card-front, .rect-card-back {
+  width: 100%;
+  height: 100%;
+  background: rgb(230, 6, 6);
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  text-align: left;
+  padding: 20px;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.8s;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Voorkant content: afbeelding links, tekst rechts */
+.card-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.card-content img {
+  width: 150px;   /* Grotere afbeelding */
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.text-content h2 {
+  margin: 0;
+  font-size: 26px;
+}
+
+.text-content p {
+  margin: 5px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Knoppen */
+.rect-card-front button, .rect-card-back button {
+  margin-top: 15px;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  background: #66a6ff;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.rect-card-front button:hover, .rect-card-back button:hover {
+  background: #89f7fe;
+}
+
+/* Achterkant layout */
+.rect-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+  font-size: 16px;
+}
+
+/* Flip effect */
+.rect-card.flipped .rect-card-front {
+  transform: rotateY(180deg);
+}
+
+.rect-card.flipped .rect-card-back {
+  transform: rotateY(0deg);
+}
