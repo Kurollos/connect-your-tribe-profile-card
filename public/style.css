@@ -1,53 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Card container */
+.card {
+  width: 300px;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem; /* afgeronde hoeken */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 1rem auto; /* centreren */
 }
 
-body {
-  min-height: 100vh;
-  display: grid;
-  place-items: center;
-  font-family: Helvetica, Arial, sans-serif;
-  background: silver;
-  color: #050542;
+/* Hover effect voor de kaart */
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-header {
-  padding: 0.5rem;
-  background: #A675F5;
-  color: white;
-
-  h1 {
-    text-transform: uppercase;
-  }
+/* Profielfoto / avatar */
+.profile-pic {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%; /* rond maken */
+  display: block;
+  margin: 0 auto 1rem auto; /* centreren en afstand naar beneden */
 }
 
-article {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  width: 20rem;
-  aspect-ratio: 1/1;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  background: white;
+/* Naam */
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
   text-align: center;
-  transform-origin: center;
-  transform: rotate(2deg);
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  > p {
-    font-size: 2rem;
-    font-family: 'Permanent Marker', cursive;
-    transform-origin: center;
-    transform: rotate(-6deg);
-    word-break: break-all;
-  }
+  margin-bottom: 0.3rem;
 }
 
-footer {
-  height: 1rem;
-  background: #A675F5;
+/* Functie / rol */
+.role {
+  font-style: italic;
+  color: grey;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Contactgegevens */
+.contact-info {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+/* Individuele contactitems */
+.contact-info li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+/* Velden uit database visueel markeren */
+.contact-db {
+  color: #1E90FF; /* afwijkende kleur */
+  font-weight: bold;
+}
+
+/* Hover-effect voor contactvelden */
+.contact-info li:hover {
+  color: #104E8B; /* donkerder blauw bij hover */
+}
+
+/* Optionele extra info sectie */
+.more-info {
+  display: none; /* wordt zichtbaar via JS toggle */
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  line-height: 1.3;
+  color: #333;
+}
+
+/* Meer info knop */
+.more-info-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid #1E90FF;
+  background-color: #fff;
+  color: #1E90FF;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.more-info-btn:hover {
+  background-color: #1E90FF;
+  color: #fff;
 }
