@@ -12,32 +12,31 @@
 </article>
 
 
-<div class="rect-card">
-    <div class="rect-card-front">
-      <h2>Visitekaartje 2025</h2>
-      <div class="card-content">
-       <iframe src="assets/IMG_6652 (4).jpg" width="150" height="150" style="border:0;" normalscreen></iframe>
-        <div class="text-content">
-          <h2>Kurollos Yaakoub</h2>
-          <p>Ad Frontend Student</p>
-          <p>Ik ben een 21-jarige Developer. Ik ben geïnteresseerd in front-end design, omdat ik dol ben op creativiteit en met deze opleiding kan ik mijn kennis uitbreiden.</p>
+<section class="card">
+  <!-- Profielfoto / Logo -->
+  <img src="avatar.png" alt="Profielfoto" class="profile-pic">
 
-          <!-- Skills onder de tekst -->   
-          <h3>Skills & Kwaliteiten</h3>                
-          <ul>
-            <li>💻 Frontend Design</li>        
-            <li>🏆 Samenwerking: ★★★</li>
-            <li>🔍 Oplettend: ★★</li>
-            <li>😌 Rustig: ★★★★</li>
-          </ul>
-          <h3>mijn droom</h3>
-          <p>Ik wil graag nieuwe dingen leren zodat ik later in een bedrijf kan werken en wat designs kan maken.</p>
-          <h3>mijn passie</h3>
-          <p>Ik lees wat fantasy boeken, ik beweeg met sporten als ik na buiten ga en ik game wat spelletjes..</p>
-          <i class="material-icons">HTML</i>   <i class="material-icons">CSS</i>   <i class="material-icons">JS</i>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- Naam -->
+  <h1 class="name">Jouw Naam</h1>
+
+  <!-- Functie -->
+  <p class="role">Functie</p>
+
+  <!-- Contactgegevens -->
+  <ul class="contact-info">
+    <li class="contact-db phone"> Telefoon</li> <!-- uit database -->
+    <li class="contact-db email"> E-mail</li>  <!-- uit database -->
+    <li class="contact-db website"> Website</li> <!-- uit database -->
+  </ul>
+
+  <!-- Optionele extra info -->
+  <button class="more-info-btn">Meer info</button>
+  <section class="more-info">
+    <p>Skills</p>
+    <p>Passie</p>
+    <p>Dromen</p>
+  </section>
+</section>
+
 
 {% render 'partials/foot.liquid' %}
