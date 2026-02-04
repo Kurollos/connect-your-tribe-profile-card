@@ -2,29 +2,24 @@
 
 <section class="card">
   <!-- Profielfoto / Logo -->
- <img src="{{ person.avatar }}" alt="Profielfoto" class="profile-pic">
+ <img src="{{ person.avatar }}" alt="">
 
 
   <!-- Naam -->
   <h1 class="name">{{ person.name }}</h1>
+  <h2> {{ person.nickname | upcase}}</h2>
 
   <!-- Functie -->
+   <li><a href="{{ person.website }}" target="_blank">Portfolio</a></li>
    <li><a href="https://github.com/{{ person.github_handle }}" target="_blank">Github</a></li>
 
   <section>
-            <ul>
-                <li>Communicatie
-                    <meter min="1" max="3" value="3"></meter>
-                </li>
-                <li>
-                    Zelfstandigheid
-                    <meter min="1" max="3" value="3"></meter>
-                </li>
-                <li>
-                    Samenwerken
-                    <meter min="1" max="3" value="2"></meter>
-                </li>
-            </ul>
-        </section>
+  <ul>
+    <li>Communicatie – 8/10</li>
+    <li>Zelfstandigheid – 8/10</li>
+    <li>Samenwerken – 8/10</li>
+  </ul>
+</section>
+
 
 {% render 'partials/foot.liquid' %}
