@@ -1,42 +1,48 @@
 {% render 'partials/head.liquid' %}
 
-<article>
-  <header>
-    <h1>Hallo</h1>
-    <p>mijn naam is</p>
-  </header>
-
-  <p>{{ person.name }}</p>
-
-  <footer></footer>
-</article>
-
-
 <section class="card">
   <!-- Profielfoto / Logo -->
  <img src="{{ person.avatar }}" alt="Profielfoto" class="profile-pic">
 
 
-  <!-- Naam -->
-  <h1 class="name">{{ person.name }}</h1>
+<section class="card">
+  <!-- Profielfoto / Logo -->
+  <img src="{{ person.avatar | default: 'avatar.png' }}" alt="Profielfoto" class="profile-pic">
 
-  <!-- Functie -->
-  <p class="role">{{ person.role }}</p>
+  <!-- Naam -->
+  <h1 class="name">{{ person.name | default: "Kurollos Yaakoub" }}</h1>
+
+  <!-- Functie / rol -->
+  <p class="role">{{ person.role | default: "School Student" }}</p>
 
   <!-- Contactgegevens -->
   <ul class="contact-info">
-    <li class="contact-db phone">{{ person.email }}</li>
-    <li class="contact-db website">{{ person.website }}</li>
-    <li class="contact-db linkedin">{{ person.linkedin }}</li>
+    <li class="contact-db phone">{{ person.email | default: "Geen e-mail" }}</li>
+    <li class="contact-db website">
+      {% if person.website %}
+        <a href="{{ person.website }}" target="_blank">{{ person.website }}</a>
+      {% else %}
+        Geen website
+      {% endif %}
+    </li>
+    <li class="contact-db linkedin">
+      {% if person.github_handle %}
+        <a href="https://github.com/{{ person.github_handle }}" target="_blank">{{ person.github_handle }}</a>
+      {% else %}
+        Geen LinkedIn
+      {% endif %}
+    </li>
   </ul>
 
   <!-- Optionele extra info -->
   <button class="more-info-btn">Meer info</button>
- <section class="more-info">
-  <p>{{ person.skills }}</p>
-  <p>{{ person.passie }}</p>
-  <p>{{ person.dromen }}</p>
+  <section class="more-info">
+    <p>{{ person.skills | default: "Geen skills" }}</p>
+    <p>{{ person.passie | default: "Geen passie" }}</p>
+    <p>{{ person.dromen | default: "Geen dromen" }}</p>
+  </section>
 </section>
+
 
 
 {% render 'partials/foot.liquid' %}
