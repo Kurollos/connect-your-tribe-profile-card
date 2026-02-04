@@ -42,34 +42,67 @@
 }
 
 /* Links (Portfolio / GitHub) */
-.card ul {
+.card li {
   list-style: none;
-  padding: 0;
-  margin: 1rem 0;
-}
-
-.card ul li {
   margin-bottom: 0.5rem;
 }
 
-.card ul li a {
+.card li a {
   text-decoration: none;
   color: #1E90FF;
   font-weight: bold;
   transition: color 0.3s;
 }
 
-.card ul li a:hover {
+.card li a:hover {
   color: #104E8B;
 }
 
 /* Skills sectie */
 .card section ul {
-  margin-top: 1rem;
   padding: 0;
+  margin-top: 1rem;
 }
 
 .card section ul li {
   font-size: 0.95rem;
   padding: 0.3rem 0;
+}
+
+/* Bio */
+h3 {
+  max-width: 320px;
+  margin: 1rem auto;
+  font-size: 0.95rem;
+  font-weight: normal;
+  text-align: center;
+  color: #333;
+}
+
+/* Oefenpagina link */
+a[href="/oefenen"] {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: #1E90FF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a[href="/oefenen"]:hover {
+  color: #104E8B;
+}
+
+/* Data / debug section */
+details {
+  max-width: 600px;
+  margin: 2rem auto;
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
 }
