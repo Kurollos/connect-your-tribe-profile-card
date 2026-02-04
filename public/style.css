@@ -1,96 +1,75 @@
 /* Card container */
 .card {
-  width: 300px;
-  padding: 1rem;
+  width: 320px;
+  padding: 1.2rem;
   border: 1px solid #ccc;
-  border-radius: 0.5rem; /* afgeronde hoeken */
+  border-radius: 0.75rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
   background-color: #fff;
+  margin: 2rem auto;
+  text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
-  margin: 1rem auto; /* centreren */
 }
 
-/* Hover effect voor de kaart */
+/* Hover effect */
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.03);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Profielfoto / avatar */
-.profile-pic {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%; /* rond maken */
-  display: block;
-  margin: 0 auto 1rem auto; /* centreren en afstand naar beneden */
-}
-
-/* Naam */
-.name {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 0.3rem;
-}
-
-/* Functie / rol */
-.role {
-  font-style: italic;
-  color: grey;
-  text-align: center;
+/* Profielfoto */
+.card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
   margin-bottom: 1rem;
 }
 
-/* Contactgegevens */
-.contact-info {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1rem 0;
+/* Naam */
+.card h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.2rem;
 }
 
-/* Individuele contactitems */
-.contact-info li {
+/* Nickname */
+.card h2 {
+  font-size: 0.9rem;
+  font-weight: normal;
+  color: grey;
+  margin-bottom: 1rem;
+}
+
+/* Links (Portfolio / GitHub) */
+.card ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.card ul li {
   margin-bottom: 0.5rem;
-  font-size: 1rem;
-  cursor: pointer;
+}
+
+.card ul li a {
+  text-decoration: none;
+  color: #1E90FF;
+  font-weight: bold;
   transition: color 0.3s;
 }
 
-/* Velden uit database visueel markeren */
-.contact-db {
-  color: #1E90FF; /* afwijkende kleur */
-  font-weight: bold;
+.card ul li a:hover {
+  color: #104E8B;
 }
 
-/* Hover-effect voor contactvelden */
-.contact-info li:hover {
-  color: #104E8B; /* donkerder blauw bij hover */
-}
-
-/* Optionele extra info sectie */
-.more-info {
-  display: none; /* wordt zichtbaar via JS toggle */
+/* Skills sectie */
+.card section ul {
   margin-top: 1rem;
-  font-size: 0.9rem;
-  line-height: 1.3;
-  color: #333;
+  padding: 0;
 }
 
-/* Meer info knop */
-.more-info-btn {
-  display: block;
-  margin: 0 auto;
-  padding: 0.4rem 0.8rem;
-  border: 1px solid #1E90FF;
-  background-color: #fff;
-  color: #1E90FF;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
-}
-
-.more-info-btn:hover {
-  background-color: #1E90FF;
-  color: #fff;
+.card section ul li {
+  font-size: 0.95rem;
+  padding: 0.3rem 0;
 }
