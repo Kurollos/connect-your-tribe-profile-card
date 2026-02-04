@@ -14,28 +14,28 @@
 
 <section class="card">
   <!-- Profielfoto / Logo -->
-  <img src="avatar.png" alt="Profielfoto" class="profile-pic">
+ <img src="{{ person.avatar }}" alt="Profielfoto" class="profile-pic">
+
 
   <!-- Naam -->
-  <h1 class="name"></h1>
+  <h1 class="name">{{ person.name }}</h1>
 
   <!-- Functie -->
   <p class="role">School Student</p>
 
   <!-- Contactgegevens -->
   <ul class="contact-info">
-    <li class="contact-db phone"> E-mail</li> <!-- uit database -->
-    <li class="contact-db email"> Website</li>  <!-- uit database -->
-    <li class="contact-db website"> Linkedin</li> <!-- uit database -->
+    <li class="contact-db phone">{{ person.email }}</li>
+    <li class="contact-db website">{{ person.website }}</li>
+    <li class="contact-db linkedin">{{ person.linkedin }}</li>
   </ul>
 
   <!-- Optionele extra info -->
   <button class="more-info-btn">Meer info</button>
-  <section class="more-info">
-    <p>Skills</p>
-    <p>Passie</p>
-    <p>Dromen</p>
-  </section>
+ <section class="more-info">
+  <p>{{ person.skills }}</p>
+  <p>{{ person.passie }}</p>
+  <p>{{ person.dromen }}</p>
 </section>
 
 
