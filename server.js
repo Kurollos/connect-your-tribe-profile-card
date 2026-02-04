@@ -70,8 +70,3 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
-
-app.get('/oefenen', async function (request, response) {
-   // Render practice.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
-   response.render('practice.liquid', {person: personResponseJSON.data})
-})
