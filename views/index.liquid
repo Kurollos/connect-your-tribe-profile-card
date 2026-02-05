@@ -10,10 +10,9 @@
   <h2> {{ person.nickname | upcase}}</h2>
 
   <!-- Functie -->
-  <li>
-  <a href="https://kurollos.github.io/your-tribe-profile-card/" target="_blank">
+  <li><a href="https://kurollos.github.io/your-tribe-profile-card/" target="_blank">
     Old profilecard
-  </a>
+</a>
 </li>
    <li><a href="https://github.com/{{ person.github_handle }}" target="_blank">Github</a></li>
 
@@ -29,5 +28,5 @@
     </main>
     <a href="/oefenen">Oefenpagina</a>
     <details><summary>Data</summary><pre>{{ person | json:4 }}</pre></details>
-
+    
 {% render 'partials/foot.liquid' %}
