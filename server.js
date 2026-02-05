@@ -47,9 +47,17 @@ app.get('/', async function (request, response) {
 })
 
 app.get('/oefenen', async function (request, response) {
-   // Render index.liquid uit de Views map en geef de opgehaalde data mee, in een variabele genaamd person
-   response.render('practice.liquid', { person })
-})
+  const apiResponse = await fetch('https://fdnd.directus.app/items/person/270');
+  const personResponseJSON = await apiResponse.json();
+  const person = personResponseJSON.data;
+
+  if (person.custom) {
+    person.custom = JSON.parse(person.custom);
+  }
+
+  response.render('oefenen', { person });
+});
+
 
 
 // Had je meer pagina's in je oude visitekaartje? Zoals een contact.html?
