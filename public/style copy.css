@@ -1,103 +1,195 @@
+/* ===================== */
+/* RESET & BASIS */
+/* ===================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background: linear-gradient(135deg, #1b077e, #043376);
-  margin: 0;
+  padding: 10px;
 }
 
-/* Extra grote, liggende kaart */
+/* ===================== */
+/* KAART CONTAINER */
+/* ===================== */
 .rect-card {
-  width: 850px;    /* Groter */
-  height: 580px;   /* Groter */
+  width: 100%;
+  max-width: 100%;
+  min-height: 450px;
   perspective: 1000px;
   position: relative;
 }
 
-/* Voorkant en achterkant */
-.rect-card-front, .rect-card-back {
+/* ===================== */
+/* VOOR- EN ACHTERKANT */
+/* ===================== */
+.rect-card-front,
+.rect-card-back {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   background: rgb(230, 6, 6);
   border-radius: 15px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  text-align: left;
   padding: 20px;
-  box-sizing: border-box;
   backface-visibility: hidden;
-  position: absolute;
-  top: 0;
-  left: 0;
   transition: transform 0.8s;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-/* Voorkant content: afbeelding links, tekst rechts */
+/* ===================== */
+/* CONTENT */
+/* ===================== */
 .card-content {
   display: flex;
-  align-items: flex-start;
-  gap: 30px;
+  flex-direction: column; /* mobiel */
+  align-items: center;
+  text-align: center;
+  gap: 15px;
 }
 
 .card-content img {
-  width: 150px;   /* Grotere afbeelding */
-  height: 150px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
 }
 
+/* ===================== */
+/* TEKST */
+/* ===================== */
 .text-content h2 {
-  margin: 0;
-  font-size: 26px;
+  font-size: 18px;
 }
 
 .text-content p {
-  margin: 5px 0;
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.4;
 }
 
-/* Knoppen */
-.rect-card-front button, .rect-card-back button {
+/* ===================== */
+/* BUTTONS */
+/* ===================== */
+.rect-card :is(button) {
   margin-top: 15px;
-  padding: 12px 25px;
+  padding: 10px;
+  width: 100%;
   border: none;
   border-radius: 25px;
   background: #66a6ff;
   color: white;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
 }
 
-.rect-card-front button:hover, .rect-card-back button:hover {
+.rect-card :is(button:hover) {
   background: #89f7fe;
 }
 
-/* Achterkant layout */
+/* ===================== */
+/* ACHTERKANT */
+/* ===================== */
 .rect-card-back {
   transform: rotateY(180deg);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 ul {
   list-style: none;
-  padding: 0;
-  margin: 10px 0 0 0;
-  font-size: 16px;
+  margin-top: 10px;
+  font-size: 13px;
 }
 
-/* Flip effect */
+/* ===================== */
+/* FLIP EFFECT */
+/* ===================== */
 .rect-card.flipped .rect-card-front {
   transform: rotateY(180deg);
 }
 
 .rect-card.flipped .rect-card-back {
   transform: rotateY(0deg);
+}
+
+/* ===================== */
+/* MEDIA QUERIES */
+/* ===================== */
+
+/* Tablet */
+@media (min-width: 600px) {
+  body {
+    padding: 20px;
+  }
+
+  .rect-card {
+    max-width: 600px;
+    min-height: 500px;
+  }
+
+  .card-content img {
+    width: 110px;
+    height: 110px;
+  }
+
+  .text-content h2 {
+    font-size: 20px;
+  }
+
+  .text-content p {
+    font-size: 14px;
+  }
+
+  .rect-card :is(button) {
+    width: auto;
+    padding: 12px 20px;
+  }
+}
+
+/* Laptop */
+@media (min-width: 900px) {
+  .rect-card {
+    max-width: 850px;
+    height: 580px;
+  }
+
+  .card-content {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 30px;
+  }
+
+  .card-content img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .text-content h2 {
+    font-size: 26px;
+  }
+
+  .text-content p {
+    font-size: 16px;
+  }
+}
+
+/* Grote schermen */
+@media (min-width: 1200px) {
+  .rect-card {
+    max-width: 900px;
+  }
 }
